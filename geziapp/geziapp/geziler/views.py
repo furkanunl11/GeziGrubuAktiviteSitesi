@@ -9,5 +9,5 @@ def index(request):
 def geziler(request):
     return HttpResponse("geziler")
 
-def gezidetay(request):
-    return HttpResponse("gezidetay")
+def gezidetay(request , slug):
+    return HttpResponse("gezidetay: " + slug)

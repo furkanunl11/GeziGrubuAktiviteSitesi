@@ -1,12 +1,13 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
 
 def index(request):
-    pass
+    return HttpResponse("index")
 
 def geziler(request):
-    pass
+    return HttpResponse("geziler")
 
 def gezidetay(request):
-    pass
+    return HttpResponse("gezidetay")

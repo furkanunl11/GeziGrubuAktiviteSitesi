@@ -10,5 +10,5 @@ def geziler(request):
 
 def gezidetay(request , slug):
     return render(request, 'gezidetay.html', {
-        slug: slug
+        "slug": slug
     })

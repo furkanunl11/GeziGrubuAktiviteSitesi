@@ -11,4 +11,3 @@ def geziler(request):
 
 def gezidetay(request , slug):
     return HttpResponse("gezidetay: " + slug)
-## asd

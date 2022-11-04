@@ -1,13 +1,14 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
 
 def index(request):
-    return HttpResponse("index")
+    return render(request, 'index.html')
 
 def geziler(request):
-    return HttpResponse("geziler")
+    return render(request, 'geziler.html')
 
 def gezidetay(request , slug):
-    return HttpResponse("gezidetay: " + slug)
+    return render(request, 'gezidetay.html', {
+        slug: slug
+    })

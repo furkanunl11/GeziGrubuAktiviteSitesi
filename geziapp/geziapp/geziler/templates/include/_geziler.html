@@ -1,7 +1,7 @@
 {% load static %}
 
 <div class="card m-card shadow border-0">
-    <a href="movies-detail.html">
+    <a href="{% url 'gezi-detay' gezi.slug %}">
       <div class="m-card-cover">
         <div
           class="position-absolute bg-white shadow-sm rounded text-center p-2 m-2 love-box"
@@ -12,18 +12,14 @@
           <small class="text-muted">23,421</small>
         </div>
         <img
-          src="{% static 'img/venedik.jpg' %}"
-          class="card-img-top"
-          alt="..."
-        />
+          src="{% static 'img/'|add:gezi.imageUrl %}" class="card-img-top" alt="..."/>
       </div>
       <div class="card-body p-3">
-        <h5 class="card-title text-gray-900 mb-1">İtalya - Venedik</h5>
+        <h5 class="card-title text-gray-900 mb-1"> {{gezi.title}} </h5>
         <p class="card-text">
-          <small class="text-muted">İtalyanca</small>
+          <small class="text-muted">{{ gezi.language|title }}</small>
           <small class="text-danger"
-            ><i class="fas fa-calendar-alt fa-sm text-gray-400"></i> 22
-            AUG</small
+            ><i class="fas fa-calendar-alt fa-sm text-gray-400"></i> {{gezi.date}}  </small
           >
         </p>
       </div>

@@ -4,5 +4,5 @@ urlpatterns = [
 
     path("", views.index),
     path("geziler", views.geziler),
-    path("gezidetay/<slug:slug>", views.gezidetay)
+    path("gezidetay/<slug:slug>", views.gezidetay, name="gezi-detay")
 ]

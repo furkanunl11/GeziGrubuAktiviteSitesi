@@ -1,0 +1,113 @@
+{% load static %}
+
+
+<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
+    <a
+      class="sidebar-brand d-flex align-items-center justify-content-center"
+      href=""
+    >
+      <div class="sidebar-brand-icon">
+        <img src="{% static '' %}" alt="" />
+      </div>
+      <div class="sidebar-brand-text mx-3"><img src="" alt="" /></div>
+    </a>
+
+    <li class="nav-item active">
+      <a class="nav-link" href="/geziler">
+        <i class="fas fa-fw fa-film"></i>
+        <span>Gezilecek Yerler</span></a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="events.html">
+        <i class="fas fa-fw fa-glass-cheers"></i>
+        <span>Etkinlikler</span></a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="people.html">
+        <i class="fas fa-fw fa-users"></i>
+        <span>Topluluk</span></a
+      >
+
+      <hr class="sidebar-divider" />
+
+      <div class="sidebar-heading">Ekstra Sayfalar</div>
+    </li>
+
+    <li class="nav-item">
+      <a
+        class="nav-link collapsed"
+        href="#"
+        data-toggle="collapse"
+        data-target="#collapseTwo"
+        aria-expanded="true"
+        aria-controls="collapseTwo"
+      >
+        <i class="fas fa-fw fa-pager"></i>
+        <span>Sayfalar</span>
+      </a>
+      <div
+        id="collapseTwo"
+        class="collapse"
+        aria-labelledby="headingTwo"
+        data-parent="#accordionSidebar"
+      >
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Bütün Sayfalar</h6>
+          <a class="collapse-item" href="movies.html">Gezilecek Yerler</a>
+          <a class="collapse-item" href="movies-detail.html"
+            >Gezilecek Yer Detayları</a
+          >
+          <a class="collapse-item" href="events.html">Etkinlikler</a>
+          <a class="collapse-item" href="events-detail.html"
+            >Etkinlik Detayları</a
+          >
+          <a class="collapse-item" href="people.html">Topluluk</a>
+          <a class="collapse-item" href="people-detail.html"
+            >Topluluk Detayları</a
+          >
+          <a class="collapse-item" href="sports.html"></a>
+          <a class="collapse-item" href="sports-detail.html"></a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="offers.html">
+        <i class="fas fa-fw fa-fire"></i>
+        <span>Haberler</span></a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link collapsed"
+        href="#"
+        data-toggle="collapse"
+        data-target="#collapsePages"
+        aria-expanded="true"
+        aria-controls="collapsePages"
+      >
+        <i class="fas fa-fw fa-clone"></i>
+        <span>Ekstra Sayfalar</span>
+      </a>
+      <div
+        id="collapsePages"
+        class="collapse"
+        aria-labelledby="headingPages"
+        data-parent="#accordionSidebar"
+      >
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Giriş Ekranı:</h6>
+          <a class="collapse-item" href="login.html">Giriş</a>
+          <a class="collapse-item" href="register.html">Kayıt ol</a>
+          <a class="collapse-item" href="forgot-password.html"
+            >Şifremi unuttum</a
+          >
+          <div class="collapse-divider"></div>
+          <h6 class="collapse-header">Diğer Sayfalar:</h6>
+          <a class="collapse-item" href="404.html">404 Sayfası</a>
+          <a class="collapse-item" href="blank.html">Boş Sayfa</a>
+        </div>
+      </div>
+    </li>
+  </ul>

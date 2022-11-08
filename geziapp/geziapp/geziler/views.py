@@ -76,19 +76,45 @@ data = {
             "date": date(2021,3,10)
         }
     ],
-        "sliders": []
+        "sliders": [
+            {
+                "slider_image":"slider.jpg",
+                "url":"gezi-adi-1"
+            },
+             {
+                "slider_image":"slider1.jpg",
+                "url":"gezi-adi-2"
+            },
+             {
+                "slider_image":"slider2.png",
+                "url":"gezi-adi-3"
+            },
+             {
+                "slider_image":"slider3.jpg",
+                "url":"gezi-adi-4"
+            },
+             {
+                "slider_image":"slider4.jpg",
+                "url":"gezi-adi-5"
+            }
+        ]
 
     
 }
 
 def index(request):
-    geziler = data["geziler"]
+    geziler = data["geziler"][-4:]
+    sliders = data["sliders"]
     return render(request, 'index.html', {
-        "geziler": geziler
+        "geziler": geziler,
+        "sliders": sliders
     })
 
 def geziler(request):
-    return render(request, 'geziler.html')
+    geziler = data["geziler"]
+    return render(request, 'geziler.html' , {
+        "geziler": geziler
+    })
 
 def gezidetay(request , slug):
     return render(request, 'gezidetay.html', {

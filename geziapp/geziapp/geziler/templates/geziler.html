@@ -25,34 +25,16 @@
       <div class="row">
         <div class="col">
           <div class="row">
-            <div class="col-xl-4 col-md-6 mb-4">
-              {% include 'include/_geziler.html' %}
-            </div>
-            <div class="col-xl-4 col-md-6 mb-4">
-              {% include 'include/_geziler.html' %}
-            </div>
-            <div class="col-xl-4 col-md-6 mb-4">
-              {% include 'include/_geziler.html' %}
-            </div>
-            <div class="col-xl-4 col-md-6 mb-4">
-              {% include 'include/_geziler.html' %}
-            </div>
-            <div class="col-xl-4 col-md-6 mb-4">
-              {% include 'include/_geziler.html' %}
-            </div>
-            <div class="col-xl-4 col-md-6 mb-4">
-              {% include 'include/_geziler.html' %}
-            </div>
-            <div class="col-xl-4 col-md-6 mb-4">
-              {% include 'include/_geziler.html' %}
-            </div>
-            <div class="col-xl-4 col-md-6 mb-4">
-              {% include 'include/_geziler.html' %}
-            </div>
-            <div class="col-xl-4 col-md-6 mb-4">
-              {% include 'include/_geziler.html' %}
-            </div>
-          </div>
+
+              {% for gezi in geziler %}
+                <div class="col-xl-4 col-md-6 mb-4">
+
+                  {% include 'include/_geziler.html' %}
+        
+              </div>
+              {% endfor %}
+
+
           <div class="text-center mt-1 mb-4 col-12">
             <div class="spinner-border" role="status">
               <span class="sr-only">Loading...</span>

@@ -6,7 +6,7 @@ data = {
         {
             "title":"gezi1",
             "description": "gezi aciklama1",
-            "imageUrl": "amerika2.jpg",
+            "imageUrl": "venedik.jpg",
             "slug": "gezi-adi-1",
             "language":"english",
             "date": date(2021,5,10)
@@ -117,6 +117,15 @@ def geziler(request):
     })
 
 def gezidetay(request , slug):
+    geziler = data["geziler"]
+
+    """secilenGezi = None
+    for gezi in geziler:
+        if gezi["slug"] == slug:
+            secilenGezi = gezi"""
+
+    secilenGezi = next(gezi for gezi in geziler if gezi["slug"] == slug)
+
     return render(request, 'gezidetay.html', {
-        "slug": slug
+        "gezi": secilenGezi
     })

@@ -6,10 +6,19 @@ data = {
         {
             "title":"gezi1",
             "description": "gezi aciklama1",
-            "imageUrl": "venedik.jpg",
+            "imageUrl": "venedik2.jpg",
             "slug": "gezi-adi-1",
             "language":"english",
             "date": date(2021,5,10)
+        },
+        {
+            "title":"Traking",
+            "description":"Traking aciklama1",
+            "imageUrl": "traking.jpg",
+            "slug": "traking-1",
+            "language":"",
+            "date":""
+
         },
         {
             "title":"gezi2",
@@ -34,6 +43,14 @@ data = {
             "slug": "gezi-adi-4",
             "language":"english",
             "date": date(2021,3,10)
+        },
+        {
+            "title":"Dağcılık",
+            "description":"dagcilik aciklama1",
+            "imageUrl": "dagcilik.jpg",
+            "slug": "dagcilik-1",
+            "language":"",
+            "date":""
         },
         {
             "title":"gezi5",

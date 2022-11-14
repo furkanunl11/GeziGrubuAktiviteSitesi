@@ -1,8 +1,11 @@
 from django.db import models
 
 
-"""class Setting(models.Model):
-    pass
+class Setting(models.Model):
+    id = models.CharField(primary_key=True)
+    title = models.CharField(max_length=100)
+    keywords = models.CharField(max_length=100)
+    description = models.TextField()
 
 class User(models.Model):
     pass
@@ -33,4 +36,4 @@ class attend(models.Model):
 
 class message(models.Model):
     pass
-"""
+

@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Setting(models.Model):
+"""class Setting(models.Model):
     pass
 
 class User(models.Model):
@@ -33,4 +33,4 @@ class attend(models.Model):
 
 class message(models.Model):
     pass
-
+"""

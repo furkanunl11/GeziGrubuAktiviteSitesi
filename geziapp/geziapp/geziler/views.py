@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from datetime import date
-from geziler.models import Category
+from geziler.models import Category,Video
 
 data = {
     
@@ -46,7 +46,7 @@ def geziler(request):
 
 def gezidetay(request , slug):
     gezi = get_object_or_404(Category, slug = slug)
-
     return render(request, 'gezidetay.html', {
-        "gezi": gezi
+        "gezi": gezi,
+        "videos": gezi.video_set.all()
     })

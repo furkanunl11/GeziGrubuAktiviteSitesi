@@ -134,38 +134,10 @@
                 class="tab-pane fade show active"
                 id="home"
                 role="tabpanel"
-                aria-labelledby="home-tab"
-              >
-                <h5 class="mt-0 mb-3">İtalya-Venedik</h5>
-                <p>
-                  Güney Avrupa ve Akdeniz'deki merkezi konumu 
-                  nedeniyle İtalya yüzyıllar boyunca çeşitli Avrupa 
-                  uygarlıklarına ev sahipliği yapmıştır. 
-                  Günümüz İtalya topraklarına yayılmış en önemlileri Hint-Avrupa kökenli ve ülkeye de ismini vermiş olan 
-                  İtalikler olan antik toplulukların ardından,
-                  Klasik Antik Çağ'dan başlayarak Fenikeliler ve Kartacalılar, 
-                  Sicilya ve Sardinya'da koloniler kurdular;[11] Yunanlar ise Güney İtalya'da Magna Graecia adını verdikleri bölgede yerleşimler oluşturdular.
-                   Etrüskler ve Keltler de Orta ve Kuzey İtalya'yı yurt edindiler. 
-                   İtalik bir kavim olan Latinler, 
-                   MÖ 8. yüzyılda ileride Roma Senatosu ve Halkı tarafından yönetilecek bir cumhuriyete dönüşecek Roma Krallığı'nı kurdular. 
-                   Roma Cumhuriyeti kısa sürede İtalya Yarımadası'ndaki komşularını ele geçirdi, bunu Avrupa, Kuzey Afrika ve Asya'daki fetihler izledi. 
-                   MÖ 1. yüzyıla gelindiğinde Roma İmparatorluğu, Akdeniz Havzası'nın hakim gücü haline geldi ve bölgenin önde gelen kültürel, 
-                   siyasi ve dini merkezi oldu. Böylece 200 yıldan uzun süre İtalya'da hukuk, teknoloji, ekonomi,
-                   sanat ve edebiyatın atılım gösterdiği Pax Romana dönemi başladı.[12][13] İtalya Romalıların anavatanı olmaya 
-                   devam etse de imparatorluğun kültür, yönetim, yazı ve Hristiyanlık dini üzerindeki etkisi tüm dünyaya ulaşmıştır.
-                </p>
-                <p>
-                    Erken Orta Çağ'da İtalya Batı Roma İmparatorluğu'nun çöküşü ve Kavimler Göçü'ne şahitlik etti.
-                    11. yüzyılda çoğunlukla Kuzey ve Orta İtalya'da olmak üzere birçok şehir devleti ve denizci cumhuriyet kuruldu.
-                    Ticaret ve bankacılık ile zenginlik kazanan bu devletler
-                    modern kapitalizmin erken örneklerini oluşturdular[14] ve Avrupa-Asya ticaret merkezleri olarak işlev gördüler, 
-                    ayrıca merkezi bir yönetime bağlı olmamaları sebebiyle Avrupa'daki büyük feodal monarşilerden çok daha demokratik yönetimlere sahiplerdi.
-                </p>
-                <ul>
-                  <li>Aziz Petrus Bazilikası</li>
-                  <li>Duomo Katedrali</li>
-                  <li>Ufizi Galerisi</li>
-                </ul>                
+                aria-labelledby="home-tab">
+
+                {{gezi.description}}
+                              
               
               </div>
               <div
@@ -343,54 +315,25 @@
                 aria-labelledby="videos-tab"
               >
                 <div class="row">
+
+                  {% for video in videos %}
+
                   <div class="col-xl-6 col-lg-6">
                     <div class="mb-4">
                       <iframe
                         width="100%"
                         height="215"
-                        src="https://www.youtube.com/embed/Vk4Lsya8b8o"
+                        src="https://www.youtube.com/embed/{{video.url}}"
                         frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen=""
                       ></iframe>
                     </div>
                   </div>
-                  <div class="col-xl-6 col-lg-6">
-                    <div class="mb-4">
-                      <iframe
-                        width=100%"
-                        height="215"
-                        src="https://www.youtube.com/embed/amgcT8D5l3o"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen=""
-                      ></iframe>
-                    </div>
-                  </div>
-                  <div class="col-xl-6 col-lg-6">
-                    <div class="mb-4">
-                      <iframe
-                        width="100%"
-                        height="215"
-                        src="https://www.youtube.com/embed/lYSp3S46irQ"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen=""
-                      ></iframe>
-                    </div>
-                  </div>
-                  <div class="col-xl-6 col-lg-6">
-                    <div class="mb-4">
-                      <iframe
-                        width="100%"
-                        height="215"
-                        src="https://www.youtube.com/embed/DYCl6jdEu-A"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen=""
-                      ></iframe>
-                    </div>
-                  </div>
+                  
+                  
+                  {% endfor %}
+                  
                 </div>
               </div>
               <div

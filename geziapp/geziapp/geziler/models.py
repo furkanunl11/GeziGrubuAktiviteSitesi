@@ -78,6 +78,11 @@ class Comment(models.Model):
     def __str__(self):
         return self.comment
 
+
+
+
+
+
 class Category(models.Model):
     STATUS = (
         ('True','Evet'),
@@ -94,6 +99,16 @@ class Category(models.Model):
     isActive = models.BooleanField(default=False)
     isHome = models.BooleanField(default=False)
     titleforhead = models.CharField("Kafa Başlığı", max_length=50,null=True)
+
+    def __str__(self):
+        return self.title
+
+
+
+class Video(models.Model):
+    title = models.CharField(max_length=200)
+    url = models.CharField(max_length=200)
+    gezi = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
@@ -161,5 +176,9 @@ class message(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
 
+    
+
     def __str__(self):
         return self.message
+
+

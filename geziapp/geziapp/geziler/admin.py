@@ -1,5 +1,5 @@
 from django.contrib import admin
-from geziler.models import Setting, User,Profile,Comment,Category,Content,image,faq,attend,message
+from geziler.models import Setting, User,Profile,Comment,Category,Content,image,faq,attend,message,Video
 from django.contrib.admin.sites import NotRegistered
 
 class CateGoryAdmin(admin.ModelAdmin):
@@ -19,6 +19,7 @@ admin.site.register(image)
 admin.site.register(faq)
 admin.site.register(attend)
 admin.site.register(message)
+admin.site.register(Video)
 
 # Kullanıcı Adı: admin
 # eposta: unal90182@gmail.com

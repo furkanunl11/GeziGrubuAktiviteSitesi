@@ -16,7 +16,7 @@ class Setting(models.Model):
     )
     title = models.CharField(max_length=150, null=True)
     keywords = models.CharField(max_length=255, null=True)
-    description = models.CharField(max_length=255, null=True)
+    description = models.TextField(max_length=255, null=True)
     company = models.CharField(max_length=50, null=True)
     address = models.CharField( max_length=150, null=True)
     phone = models.CharField(max_length=15, null=True)
@@ -33,6 +33,8 @@ class Setting(models.Model):
     create_at = models.DateTimeField(auto_now_add=True, null=True)
     uptade_at = models.DateTimeField(auto_now=True, null=True)
 
+    def __str__(self):
+        return f"{self.STATUS} {self.title}"
 
 class User(models.Model):
     id = models.AutoField(primary_key=True)
@@ -45,6 +47,8 @@ class User(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
     
+    def __str__(self):
+        return  f"{self.name} {self.surname}"
 
 
 class Profile(models.Model):
@@ -57,6 +61,8 @@ class Profile(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
 
+    def __str__(self):
+        return self.user_id
 
 class Comment(models.Model):
     id = models.AutoField(primary_key=True)
@@ -69,6 +75,8 @@ class Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
 
+    def __str__(self):
+        return self.comment
 
 class Category(models.Model):
     STATUS = (
@@ -76,29 +84,31 @@ class Category(models.Model):
         ('False',"Hayır")
     )
     id = models.AutoField(primary_key=True)
-    parent_id = models.CharField(max_length=50, null=True)
     title = models.CharField(max_length=50, null=True)
     keywords = models.CharField(max_length=50, null=True)
-    description = models.CharField(max_length=50, null=True)
+    description = models.TextField(max_length=1000, null=True)
     image = models.CharField(max_length=50, null=True)
     status = models.CharField(max_length=50, null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
-    
+
+    def __str__(self):
+        return self.title
     
 
 class Content(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=50, null=True)
     keywords = models.CharField(max_length=50, null=True)
-    description = models.CharField(max_length=50, null=True)
+    description = models.TextField("Özet",validators = [MinLengthValidator(20)])
     images = models.CharField(max_length=50, null=True)
     categoryid = models.CharField(max_length=50, null=True)
     detail = models.CharField(max_length=50, null=True)
     comment = models.OneToOneField(Comment, on_delete= models.CASCADE, null=True) ## içerik silinince, Comment'de silinir.
     category = models.OneToOneField(Category, on_delete=models.CASCADE, null=True) ## içerik silinince, kategori de silinir.
 
-
+    def __str__(self):
+        return self.title
 
 class image(models.Model):
     id = models.AutoField(primary_key=True)
@@ -107,6 +117,8 @@ class image(models.Model):
     image = models.CharField(max_length=50, null=True)
     content_id = models.OneToOneField(Content, on_delete=models.CASCADE, null=True)
 
+    def __str__(self):
+        return self.title
 
 class faq(models.Model):
     id = models.AutoField(primary_key=True)
@@ -119,7 +131,8 @@ class faq(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
 
-
+    def __str__(self):
+        return self.question
 
 
 
@@ -129,13 +142,14 @@ class attend(models.Model):
     user_id = models.CharField(max_length=50, null=True)
     status = models.CharField(max_length=50, null=True)
 
-
+    def __str__(self):
+        return self.content_id
 
 
 class message(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50, null=True)
-    email = models.CharField(max_length=50, null=True)
+    email = models.EmailField()
     phone = models.CharField(max_length=50, null=True)
     subject = models.CharField(max_length=50, null=True)
     message = models.CharField(max_length=50, null=True)
@@ -144,4 +158,5 @@ class message(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
 
-
+    def __str__(self):
+        return self.message

@@ -3,9 +3,9 @@ from geziler.models import Setting, User,Profile,Comment,Category,Content,image,
 from django.contrib.admin.sites import NotRegistered
 
 class CateGoryAdmin(admin.ModelAdmin):
-    list_display = ('title',)
+    list_display = ('title','isActive','isHome',)
     prepopulated_files = {'slug': ('title',)}
-    list_filter = ('id', 'title',)
+    list_filter = ('id', 'title','isActive','isHome',)
     search_fields = ('title', 'description',)
 
 

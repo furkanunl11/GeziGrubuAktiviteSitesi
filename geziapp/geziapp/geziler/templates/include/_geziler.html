@@ -1,7 +1,7 @@
 {% load static %}
 
 <div class="card m-card shadow border-0">
-    <a href="{% url 'gezi-detay' gezi.slug %}">
+    <a href="{% url 'gezi-detay' gezi.status %}">
       <div class="m-card-cover">
         <div
           class="position-absolute bg-white shadow-sm rounded text-center p-2 m-2 love-box"
@@ -12,7 +12,7 @@
           <small class="text-muted">23,421</small>
         </div>
         <img
-          src="{% static 'img/'|add:gezi.imageUrl %}" class="card-img-top" alt="..."/>
+          src="{% static 'img/'|add:gezi.image %}" class="card-img-top" alt="..."/>
       </div>
       <div class="card-body p-3">
         <h5 class="card-title text-gray-900 mb-1"> {{gezi.title}} </h5>

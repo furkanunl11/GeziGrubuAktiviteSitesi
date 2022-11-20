@@ -16,7 +16,7 @@ class Setting(models.Model):
     )
     title = models.CharField(max_length=150, null=True)
     keywords = models.CharField(max_length=255, null=True)
-    description = models.TextField(max_length=255, null=True)
+    description = models.TextField("Açıklama",validators= [MinLengthValidator(20)],null=True)
     company = models.CharField(max_length=50, null=True)
     address = models.CharField( max_length=150, null=True)
     phone = models.CharField(max_length=15, null=True)
@@ -38,12 +38,12 @@ class Setting(models.Model):
 
 class User(models.Model):
     id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=50, null=True)
-    surname = models.CharField(max_length=50, null=True)
+    name = models.CharField("İsim",max_length=50, null=True)
+    surname = models.CharField("Soyisim", max_length=50, null=True)
     email = models.CharField(max_length=50, null=True)
-    password = models.CharField(max_length=50, null=True)
-    role = models.CharField(max_length=50, null=True)
-    status = models.CharField(max_length=50, null=True)
+    password = models.CharField("Şifre",max_length=50, null=True)
+    role = models.CharField("Rol",max_length=50, null=True)
+    status = models.BooleanField("Durum",max_length=50, null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
     
@@ -84,13 +84,16 @@ class Category(models.Model):
         ('False',"Hayır")
     )
     id = models.AutoField(primary_key=True)
-    title = models.CharField(max_length=50, null=True)
-    keywords = models.CharField(max_length=50, null=True)
-    description = models.TextField(max_length=1000, null=True)
-    image = models.CharField(max_length=50, null=True)
-    status = models.CharField(max_length=50, null=True)
+    title = models.CharField("Başlık",max_length=50, null=True)
+    slug = models.CharField(max_length=50, null=True)
+    description = models.TextField("Açıklama",validators= [MinLengthValidator(20)])
+    image = models.CharField("Resim",max_length=50, null=True)
+    status = models.CharField("Slug Adı",max_length=50, null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
+    isActive = models.BooleanField(default=False)
+    isHome = models.BooleanField(default=False)
+    titleforhead = models.CharField("Kafa Başlığı", max_length=50,null=True)
 
     def __str__(self):
         return self.title
@@ -99,7 +102,7 @@ class Category(models.Model):
 class Content(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=50, null=True)
-    keywords = models.CharField(max_length=50, null=True)
+    slug = models.CharField(max_length=50, null=True)
     description = models.TextField("Özet",validators = [MinLengthValidator(20)])
     images = models.CharField(max_length=50, null=True)
     categoryid = models.CharField(max_length=50, null=True)
@@ -122,13 +125,13 @@ class image(models.Model):
 
 class faq(models.Model):
     id = models.AutoField(primary_key=True)
-    question = models.CharField(max_length=50, null=True)
-    answer = models.CharField(max_length=50, null=True)
-    status = models.CharField(max_length=50, null=True)
+    question = models.CharField(max_length=500, null=True)
+    answer = models.CharField(max_length=500, null=True)
+    status = models.BooleanField(max_length=50, null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
-    content = models.OneToOneField(Content, on_delete=models.CASCADE, null=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    content = models.OneToOneField(Content, on_delete=models.CASCADE, null=True, blank=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True,blank=True)
 
 
     def __str__(self):

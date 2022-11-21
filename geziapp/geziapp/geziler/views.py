@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from datetime import date
 from geziler.models import Category,Video
+from geziler.forms import CommentForm
 
+from geziler.models import Category
 data = {
     
         "sliders": [
@@ -46,7 +48,10 @@ def geziler(request):
 
 def gezidetay(request , slug):
     gezi = get_object_or_404(Category, slug = slug)
+    comment_form = CommentForm()
+
     return render(request, 'gezidetay.html', {
         "gezi": gezi,
-        "videos": gezi.video_set.all()
+        "videos": gezi.video_set.all(),
+        "comment_form": comment_form,
     })

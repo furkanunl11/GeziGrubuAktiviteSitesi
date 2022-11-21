@@ -4,6 +4,7 @@ from django.db import models
 from django.forms import ModelForm, TextInput, Textarea
 from django.core.validators import MinLengthValidator
 from django.db.models.fields import CharField
+from django.core.validators import MinLengthValidator, MaxLengthValidator
 
 from django.utils.safestring import mark_safe
 
@@ -64,19 +65,6 @@ class Profile(models.Model):
     def __str__(self):
         return self.user_id
 
-class Comment(models.Model):
-    id = models.AutoField(primary_key=True)
-    comment = models.CharField(max_length=50, null=True)
-    rate = models.CharField(max_length=50, null=True)
-    content_id = models.CharField(max_length=50, null=True)
-    user_id = models.CharField(max_length=50, null=True)
-    ip = models.CharField(max_length=50, null=True)
-    status = models.CharField(max_length=50, null=True)
-    created_at = models.DateTimeField(auto_now_add=True, null=True)
-    updated_at = models.DateTimeField(auto_now=True, null=True)
-
-    def __str__(self):
-        return self.comment
 
 
 
@@ -104,6 +92,14 @@ class Category(models.Model):
         return self.title
 
 
+class Comment(models.Model):
+    full_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    text = models.TextField(max_length=500)
+    rating = models.IntegerField(validators=[MinLengthValidator(1), MaxLengthValidator(5)])
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name ="comments")
+
+    
 
 class Video(models.Model):
     title = models.CharField(max_length=200)

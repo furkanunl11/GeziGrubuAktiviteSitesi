@@ -23,7 +23,7 @@
               </h6>
               <small class="text-muted">8,784</small>
             </div>
-            <img src="" class="img-fluid" alt="..." />
+            
           </div>
         </div>
         
@@ -481,48 +481,33 @@
                     <div class="row">
                       <div class="control-group form-group col-lg-4 col-md-4">
                         <div class="controls">
-                          <label
-                            >Your Name <span class="text-danger">*</span></label
-                          >
-                          <input type="text" class="form-control" required="" />
+                          <label> {{comment_form.full_name.label}} <span class="text-danger">*</span></label>
+                          {{ comment_form.full_name }}
                         </div>
                       </div>
                       <div class="control-group form-group col-lg-4 col-md-4">
                         <div class="controls">
                           <label
-                            >Your Email
+                            >{{comment_form.email.label}}
                             <span class="text-danger">*</span></label
                           >
-                          <input
-                            type="email"
-                            class="form-control"
-                            required=""
-                          />
+                          {{ comment_form.email }}
                         </div>
                       </div>
                       <div class="control-group form-group col-lg-4 col-md-4">
                         <div class="controls">
-                          <label
-                            >Rating <span class="text-danger">*</span></label
-                          >
-                          <select class="form-control custom-select">
-                            <option>1 Star</option>
-                            <option>2 Star</option>
-                            <option>3 Star</option>
-                            <option>4 Star</option>
-                            <option>5 Star</option>
-                          </select>
+                          <label>{{comment_form.rating.label}} <span class="text-danger">*</span></label>
+
+                            {{comment_form.rating}}
+
+
                         </div>
                       </div>
                     </div>
                     <div class="control-group form-group">
                       <div class="controls">
-                        <label>Review <span class="text-danger">*</span></label>
-                        <textarea
-                          rows="3"
-                          cols="100"
-                          class="form-control"
-                        ></textarea>
+                        <label>{{comment_form.text.label}} <span class="text-danger">*</span></label>
+                        {{comment_form.text}}
                       </div>
                     </div>
                     <div class="text-right">

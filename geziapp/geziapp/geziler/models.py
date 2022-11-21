@@ -93,11 +93,11 @@ class Category(models.Model):
 
 
 class Comment(models.Model):
-    full_name = models.CharField(max_length=100)
-    email = models.EmailField()
-    text = models.TextField(max_length=500)
-    rating = models.IntegerField(validators=[MinLengthValidator(1), MaxLengthValidator(5)])
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name ="comments")
+    full_name = models.CharField(max_length=100, null = True)
+    email = models.EmailField(default="", null = True)
+    text = models.TextField(max_length=500, null = True)
+    rating = models.IntegerField(null= True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name ="comments", null=True)
 
     
 

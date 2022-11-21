@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from datetime import date
 from geziler.models import Category,Video
 from geziler.forms import CommentForm
+from django.http.response import HttpResponseRedirect
+from django.urls import reverse
 
 from geziler.models import Category
 data = {
@@ -49,6 +51,17 @@ def geziler(request):
 def gezidetay(request , slug):
     gezi = get_object_or_404(Category, slug = slug)
     comment_form = CommentForm()
+
+    if request.method == "POST": ### databaseye kayıt ekleme işlemi
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.gezi = gezi
+            comment.save()
+            return HttpResponseRedirect(reverse("gezi-detay",args=[slug] ))
+
+    
+    
 
     return render(request, 'gezidetay.html', {
         "gezi": gezi,

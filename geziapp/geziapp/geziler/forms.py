@@ -15,8 +15,8 @@ class CommentForm(forms.ModelForm):
         )
       
         model = Comment
-        #fields = ['full_name','email','text','rating']
-        exclude = ['category',]
+        fields = ['full_name','email','text','rating']
+        #exclude = ['gezi','date_added',]
         labels = {
             "full_name":"Ad Soyad",
             "email":"Eposta",

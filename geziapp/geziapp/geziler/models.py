@@ -81,7 +81,6 @@ class Category(models.Model):
     slug = models.CharField(max_length=50, null=True)
     description = models.TextField("Açıklama",validators= [MinLengthValidator(20)])
     image = models.CharField("Resim",max_length=50, null=True)
-    status = models.CharField("Slug Adı",max_length=50, null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
     isActive = models.BooleanField(default=False)
@@ -97,9 +96,11 @@ class Comment(models.Model):
     email = models.EmailField(default="", null = True)
     text = models.TextField(max_length=500, null = True)
     rating = models.IntegerField(null= True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name ="comments", null=True)
+    date_added = models.DateTimeField(null =True, auto_now=True)
+    gezi = models.ForeignKey(Category, on_delete=models.CASCADE, related_name ="comments", null = True)
 
-    
+    def __str__(self):
+        return self.text
 
 class Video(models.Model):
     title = models.CharField(max_length=200)

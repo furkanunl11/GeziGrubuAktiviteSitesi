@@ -1,11 +1,12 @@
 from django.shortcuts import render, get_object_or_404
 from datetime import date
-from geziler.models import Category,Video
+from geziler.models import Category,Video,Comment
 from geziler.forms import CommentForm
 from django.http.response import HttpResponseRedirect
 from django.urls import reverse
 
 from geziler.models import Category
+
 data = {
     
         "sliders": [
@@ -62,9 +63,10 @@ def gezidetay(request , slug):
 
     
     
-
+    
     return render(request, 'gezidetay.html', {
         "gezi": gezi,
         "videos": gezi.video_set.all(),
-        "comment_form": comment_form,
+        "comments": gezi.comments.all().order_by("-date_added"),
+        "comment_form": comment_form
     })

@@ -70,3 +70,9 @@ def gezidetay(request , slug):
         "comments": gezi.comments.all().order_by("-date_added"),
         "comment_form": comment_form
     })
+
+
+
+
+def hakkimizda():
+    pass

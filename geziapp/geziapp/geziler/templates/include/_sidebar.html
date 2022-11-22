@@ -2,33 +2,23 @@
 
 
 <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
-    <a
-      class="sidebar-brand d-flex align-items-center justify-content-center"
-      href=" {% url 'home_page' %} "
-    >
-      <div class="sidebar-brand-icon">
-        <img src="{% static '' %}" alt="" />
-      </div>
-      <div class="sidebar-brand-text mx-3"><img src="" alt="" /></div>
-    </a>
+    
+  <a class="nav-item active" href=" {% url 'home_page' %} ">
 
     <li class="nav-item active">
+      <a class="nav-link" href="{% url 'home_page' %}">
+        <i class="fas fa-fw fa-home"></i>
+        <span>Ana Sayfa</span></a
+      >
+    
+  </a>
+    <li class="nav-item active">
       <a class="nav-link" href="{% url 'geziler_page' %}">
-        <i class="fas fa-fw fa-film"></i>
-        <span>Gezilecek Yerler</span></a
+        <i class="fas fa-baseball-ball"></i>
+        <span>Aktiviteler</span></a
       >
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="event.html">
-        <i class="fas fa-fw fa-glass-cheers"></i>
-        <span>Etkinlikler</span></a
-      >
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="people.html">
-        <i class="fas fa-fw fa-users"></i>
-        <span>Topluluk</span></a
-      >
+      
+   
 
       <hr class="sidebar-divider" />
 
@@ -57,7 +47,7 @@
           <h6 class="collapse-header">Bütün Sayfalar</h6>
           <a class="collapse-item" href="/geziler">Gezilecek Yerler</a>
           
-          <a class="collapse-item" href="events.html">Hakkımızda</a>
+          
         
         
          
@@ -74,7 +64,7 @@
         aria-expanded="true"
         aria-controls="collapsePages"
       >
-        <i class="fas fa-fw fa-clone"></i>
+        <i class="fas fa-address-card"></i>
         <span>Giriş Ekranı</span>
       </a>
       <div
@@ -89,13 +79,13 @@
           <a class="collapse-item" href="register.html">Kayıt ol</a>
           <a class="collapse-item" href="forgot-password.html"
             >Şifremi unuttum</a>
+
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'hakkimizda' %}">
+                <i class="fas fa-robot"></i>
+                <span>Hakkımızda</span></a>
          
-      </div>
-      <li class="nav-item">
-        <a class="nav-link" href="offers.html">
-          <i class="fas fa-fw fa-fire"></i>
-          <span>Haberler</span></a
-        >
+      
       </li>
     </li>
   </ul>

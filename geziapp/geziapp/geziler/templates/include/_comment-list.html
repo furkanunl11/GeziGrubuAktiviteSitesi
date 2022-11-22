@@ -1,4 +1,7 @@
-{%load static%}
+{% load static %}
+{% load filters %}
+
+
 
 {% for comment in comments %}
                   
@@ -9,12 +12,12 @@
       <span class="h6 mr-2 font-weight-bold text-gray-900">{{comment.full_name}}</span>
       <span><i class="fa fa-calendar"></i> {{comment.date_added}} </span>
       <div class="stars-rating float-right">
-        <i class="fa fa-star active"></i>
-        <i class="fa fa-star active"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <span class="rounded bg-warning text-dark pl-1 pr-1">5/3</span>
+
+
+        {{comment.rating|display_rating|safe}}
+      
+        
+        
       </div>
     </div>
     <p>

@@ -21,6 +21,7 @@ admin.site.register(attend)
 admin.site.register(message)
 admin.site.register(Video)
 
+
 # Kullanıcı Adı: admin
 # eposta: unal90182@gmail.com
 # Password: 123

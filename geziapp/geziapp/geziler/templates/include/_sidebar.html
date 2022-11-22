@@ -34,7 +34,7 @@
         aria-expanded="true"
         aria-controls="collapseTwo"
       >
-        <i class="fas fa-fw fa-pager"></i>
+        <i class="fas fa-pager"></i>
         <span>Sayfalar</span>
       </a>
       <div
@@ -75,8 +75,8 @@
       >
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Giriş Ekranı:</h6>
-          <a class="collapse-item" href="login.html">Giriş</a>
-          <a class="collapse-item" href="register.html">Kayıt ol</a>
+          <a class="collapse-item" href="{% url 'login' %}">Giriş</a>
+          <a class="collapse-item" href="{% url 'register' %}">Kayıt ol</a>
           <a class="collapse-item" href="forgot-password.html"
             >Şifremi unuttum</a>
 

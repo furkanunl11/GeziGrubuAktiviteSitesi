@@ -4,7 +4,7 @@
 
     {% for slider in sliders %}
       <div class="osahan-slider-item">
-        <a href="{% url 'gezi-detay' slider.url %}">
+        <a href="{% url 'geziler_page' %}">
         <img src="{% static 'img/'|add:slider.slider_image %}" class="img-fluid rounded" alt="..."/>
         </a>
 

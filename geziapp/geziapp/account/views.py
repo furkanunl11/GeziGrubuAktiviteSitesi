@@ -13,15 +13,20 @@ def login_request(request):
         if form.is_valid():
             email = form.cleaned_data.get("email")
             password = form.cleaned_data.get("password")
-            username = User.objects.get(email=email).username
-            user = authenticate(username=username, password= password)
 
-            if user is not None:
-                login(request,user)
-                return redirect("home_page")
+            if User.objects.filter(email = email).exists():
+                username = User.objects.get(email=email).username
+                user = authenticate(username=username, password= password)
+
+                if user is not None:
+                    login(request,user)
+                    return redirect("home_page")
+                else:
+                    form.add_error(None,"Email ya da Parola Yanlış.")
+                    return render(request,'account/login.html',{'form':form})
             else:
-                return render(request,'account/login.html',{'form':form})
-
+                form.add_error(None,"Email ile kayıtlı bir kullanıcı yok.")
+                return render(request,'account/login.html', {'form':form})
         else:
             return render(request,'account/login.html',{'form':form})
 

@@ -47,23 +47,15 @@
               class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
               aria-labelledby="userDropdown"
             >
-              <a class="dropdown-item" href="profile.html">
+              <a class="dropdown-item" href="{% url 'profile' %}">
                 <i
                   class="fas fa-user-circle fa-sm fa-fw mr-2 text-gray-400"
                 ></i>
                 Profil
               </a>
-              <a class="dropdown-item" href="profile.html">
-                <i class="fas fa-heart fa-sm fa-fw mr-2 text-gray-400"></i>
-                İzlediklerim
-              </a>
-              <a class="dropdown-item" href="profile.html">
-                <i class="fas fa-list-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                Listem
-              </a>
-              <a class="dropdown-item" href="profile.html">
+              <a class="dropdown-item" href="{% url 'change_password' %}">
                 <i class="fas fa-cog fa-sm fa-fw mr-2 text-gray-400"></i>
-                Profil Ayarları
+                Şifremi Değiştir
               </a>
               <div class="dropdown-divider"></div>
               <a

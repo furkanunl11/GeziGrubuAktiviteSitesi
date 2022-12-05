@@ -38,14 +38,14 @@ data = {
 def index(request):
     geziler = Category.objects.filter(isActive = True,isHome = True)
     sliders = data["sliders"]
-    return render(request, 'index.html', {
+    return render(request, 'geziler/index.html', {
         "geziler": geziler,
         "sliders": sliders
     })
 
 def geziler(request):
     geziler = Category.objects.filter(isActive = True)
-    return render(request, 'geziler.html' , {
+    return render(request, 'geziler/geziler.html' , {
         "geziler": geziler
     })
 
@@ -64,7 +64,7 @@ def gezidetay(request , slug):
     
     
     
-    return render(request, 'gezidetay.html', {
+    return render(request, 'geziler/gezidetay.html', {
         "gezi": gezi,
         "videos": gezi.video_set.all(),
         "comments": gezi.comments.all().order_by("-date_added"),

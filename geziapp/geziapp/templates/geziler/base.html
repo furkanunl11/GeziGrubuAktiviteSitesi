@@ -14,8 +14,44 @@
     <title>{% block page_title %}{% endblock page_title %}</title>
 </head>
 <body id = "page-top">
+    {% include 'C:/Users/Furkan UNAL/Desktop/Programlamaiki/GeziGrubuAktiviteSitesi/geziapp/geziapp/templates/geziler/partials/_messages.html' %}
     {% block content %}{% endblock %}
 
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+      </a>
+      
+    {% if user.is_authenticated %}
+    
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Çıkış yapılacak, emin misiniz?</h5>
+              <button
+                class="close"
+                type="button"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                Geçerli oturumunuzu sonlandırmaya hazırsanız aşağıdan "Çıkış"ı seçin.
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">
+                İptal
+              </button>
+              <a class="btn btn-primary" href="{% url 'logout' %}">Çıkış</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+    {% endif %}
 
     <script src="{% static 'vendor/jquery/jquery.min.js' %}" type="text/javascript"></script>
     <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}" type="text/javascript"></script>

@@ -10,17 +10,11 @@
 
         <form  class=" d-none d-sm-inline-block form-inline mr-auto my-2 my-md-0 mw-100 navbar-search">
           <div class="input-group">
-            <input
-              type="text"
-              class="form-control bg-white border-0 small"
-              placeholder="Etkinlik, gezi ve aktivite için arama yapın..."
-              aria-label="Search"
-              aria-describedby="basic-addon2"
-            />
+            <h1 style="margin-top: 15px; margin-left: 10px;">
+              Gezi Rehberim
+            </h1>
             <div class="input-group-append">
-              <button class="btn bg-white" type="button">
-                <i class="fas fa-search fa-sm"></i>
-              </button>
+              
             </div>
           </div>
         </form>
@@ -39,7 +33,17 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ user.username }}</span>
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ user.username }}</span>  
+              {% if user.profile.avatar %}
+
+              <img class = "img-profile rounded-circle" src="{{user.profile.avatar.url}}" />
+              {% else %}
+              <img class = "img-profile rounded-circle" src="{% static 'img/nouser.png' %}" />
+
+
+
+              {%endif%}
+              
               
             </a>
 

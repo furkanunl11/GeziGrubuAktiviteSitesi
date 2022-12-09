@@ -1,5 +1,14 @@
-{% extends 'geziler/base.html' %} {% load static %} {% block css_files %}
+
+
+{% extends 'geziler/base.html' %} {% load static %}
+
+{% block page_title %}
+  Aktiviteler
+{% endblock page_title %}
+
+{% block css_files %}
 {% endblock %}  {% block content %} 
+
 
 
 
@@ -19,12 +28,8 @@
       <div
         class="d-sm-flex align-items-center justify-content-between mt-4 mb-3"
       >
-        <h1 class="h5 mb-0 text-gray-900">Gezilecek Yerler</h1>
-        <a
-          href="#"
-          class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-          >Filtreyi Sıfırla<i class="fas fa-times fa-sm text-white-50"></i
-        ></a>
+        <h1 class="h5 mb-0 text-gray-900" style="margin-top: 5px; margin-left: 10px;" >Aktivitelerin Tümü Burda!</h1>
+        
       </div>
 
       <div class="row">
@@ -40,11 +45,7 @@
               {% endfor %}
 
 
-          <div class="text-center mt-1 mb-4 col-12">
-            <div class="spinner-border" role="status">
-              <span class="sr-only">Loading...</span>
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>

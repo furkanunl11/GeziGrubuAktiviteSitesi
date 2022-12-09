@@ -1,0 +1,71 @@
+{% extends 'geziler/base.html' %}
+
+{% load static %}
+
+{% block css_files %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/slick/slick.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/slick/slick-theme.min.css' %}" />
+
+{% endblock  %}
+
+
+{% block page_title %}
+
+  Hakkımızda
+
+{% endblock page_title %}
+
+
+{% block content %}
+
+
+
+<div id="wrapper">
+
+{% include 'include/_sidebar.html' %}
+
+  <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+      
+        {% include 'include/_topbar.html' %}
+
+      <div class="container-fluid"></div>
+        <div class="rContent" style="margin-top: 5px; margin-left: 10px;">
+            <h1 >
+                Gezi Rehberim Kimdir?
+            </h1>
+            <p>
+                bir marka haline gelen Gezi Rehberim, Traking , Dağcılık gibi aktiviteler; İspanya, Japonya, Norveç, Türkiye, İrlanda,
+                Filipinler, Arjantin, İtalya gibi harika turistik yerlere gezi ve etkinlik sağlıyor. 
+                Dağcılık, Traking ve bir çok keyifli
+                aktiviteler ile dolu bir tatil organizasyonudur. Geleneksel tatil paketlerinden farklı olarak,
+                tatilinizdeyken deneyimlemek istediğiniz tüm aktiviteleri tek bir pakette sunuyoruz.
+                Gezi günlüklerine yepyeni bir macerayı Gezi Rehberim deneyimi ile ekleyin!
+                Aktivite tatilinin yarattığı heyecana ortak olmak isteyen tüm tatilcilerle unutulmaz
+                bir deneyim yaşatmayı hedefliyoruz. Aktivitelere katılım hiçbir ön bilgi gerektirmiyor, yaş sınırı olmadan
+                sağlıklı tüm bireyler rahatlıkla katılabilir.
+                
+                Alanında uzman eğitmenlerimiz eşliğinde gerçekleşen aktivitelerdeki tüm ekipmanlar Gezi Rehberim tarafından ücretsiz sağlanmaktadır.
+                Tüm gün çekilen video ve fotoğraflar organizasyonun son gününde soft olarak tüm tatilciler ile paylaşıyor, 
+                anılarınız hatırlanır hatta tekrarlanır olsun istediğimizden tüm gün çekilen videolar ve fotoğrafları organizasyon sonunda sizlerle paylaşıyoruz.
+            </p>
+            <img src="{% static 'img/norvecslider.jpg' %}" alt="Hakkımızda">
+    </div>
+    </div>
+
+    <div class="row">
+        
+     
+       
+    </div>
+
+    {% include 'include/_footer.html' %}
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}

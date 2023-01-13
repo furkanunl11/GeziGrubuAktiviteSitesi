@@ -1,11 +1,11 @@
 {% load static %}
 
 
-<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" >
     
-  <a class="nav-item" href=" {% url 'home_page' %} ">
+  <a class="nav-item" href=" {% url 'home_page' %}  ">
 
-    <li class="nav-item">
+    <li class="nav-item" >
       <a class="nav-link" href="{% url 'home_page' %}">
         <i class="fas fa-fw fa-home"></i>
         <span>Ana Sayfa</span></a
@@ -44,7 +44,7 @@
         aria-labelledby="headingTwo"
         data-parent="#accordionSidebar"
       >
-        <div class="bg-white py-2 collapse-inner rounded">
+        <div class="bg-white py-2 collapse-inner rounded" >
           <h6 class="collapse-header">Bütün Sayfalar</h6>
           <a class="collapse-item" href="/geziler">Gezilecek Yerler</a>
           
@@ -56,7 +56,7 @@
       </div>
     </li>
     
-    <li class="nav-item">
+    <li class="nav-item" >
       <a
         class="nav-link collapsed"
         href="#"
@@ -74,7 +74,7 @@
         aria-labelledby="headingPages"
         data-parent="#accordionSidebar"
       >
-        <div class="bg-white py-2 collapse-inner rounded">
+        <div class="bg-white py-2 collapse-inner rounded" >
           <h6 class="collapse-header">Giriş Ekranı:</h6>
           <a class="collapse-item" href="{% url 'login' %}">Giriş</a>
           <a class="collapse-item" href="{% url 'register' %}">Kayıt ol</a>
